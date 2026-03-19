@@ -22,7 +22,7 @@ A browser-based Chinese poetry typesetting tool with procedurally generated ink-
 - **序言与脚注 / Preamble & footnotes** — 样式化的序言块，双模式脚注（块级或行内） / Styled preface blocks and dual-mode footnotes (block or inline)
 - **诗集管理 / Collection management** — 多个命名诗集存于 localStorage；新建、重命名、删除、导入导出 `.ink` 文件 / Multiple named poem books in localStorage; create, rename, delete, import/export `.ink` files
 - **诗歌数据库 / Poem database** — 通过 ID 引用 `poems.json` 中的诗歌，无需重复输入 / Reference poems by ID from `poems.json` instead of retyping
-  - `poems.json` 为[南洋吟游](https://lyy0323.space)——上海交大国学社社员与社友诗歌网站的内部数据集，入驻成员可在社团群内申请获取 / `poems.json` is an internal dataset of [Nanyangyin](https://lyy0323.space) (SJTU GuoXue Club). Registered members may request access via the club group
+  - `poems.json` 为[南洋吟游](https://sjtuguoxue.space)——上海交大国学社社员与社友诗歌网站的内部数据集，入驻成员可在社团群内申请获取 / `poems.json` is an internal dataset of [Nanyang Yinyou](https://sjtuguoxue.space) (SJTU GuoXue Club). Registered members may request access via the club group
 - **打印/PDF / Print/PDF** — `@media print` CSS 输出干净的 A5 页面 / Clean A5 pages via print CSS; `Ctrl+P` to print or save as PDF
   - 推荐打印设置 / Recommended print settings：目标打印机 → **另存为 PDF** / Destination → **Save as PDF**；纸张尺寸 → **A5**；缩放 → **自定义 150%** / Scale → **Custom 150%**
   - 成品 PDF 尺寸较大，欢迎提交 PR 提供优化方案 / Output PDFs can be large; PRs to optimize file size are welcome
