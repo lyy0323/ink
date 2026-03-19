@@ -8,6 +8,8 @@ A browser-based Chinese poetry typesetting tool with procedurally generated ink-
 >
 > *"Just write your layout like a letter — let the ink do the rest."*
 
+**在线使用 / Live Demo**: [lyy0323.space/ink](https://lyy0323.space/ink/) | **国内镜像 / China Mirror**: [ink.sjtuguoxue.space](https://ink.sjtuguoxue.space)
+
 ---
 
 ## 特性 / Features
