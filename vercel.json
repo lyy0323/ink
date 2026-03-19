@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "src": "/(index\\.html)?$", "dest": "/index.html" },
+    { "src": "/tailwind\\.min\\.js$", "dest": "/tailwind.min.js" },
+    { "src": "/ink\\.js$", "dest": "/ink.js" },
+    { "src": "/ink\\.css$", "dest": "/ink.css" },
+    { "src": "/示例诗集\\.ink$", "dest": "/示例诗集.ink" },
+    { "src": "/collections/示例诗集\\.ink$", "dest": "/collections/示例诗集.ink" },
+    { "src": ".*", "status": 404, "dest": "/404.html" }
+  ]
+}
