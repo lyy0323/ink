@@ -1,0 +1,15 @@
+.DS_Store
+.claude/
+__pycache__/
+*.pyc
+*.zip
+collections/
+!collections/示例诗集.ink
+
+# legacy / process files
+晚枫集删存.html
+沐雨集.html
+collection.html
+ink_demo.html
+ink.html
+print_.py

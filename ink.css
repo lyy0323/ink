@@ -1,0 +1,71 @@
+/* * ink.css - 水墨韵律样式库
+ * Version: 1.0.0
+ * Author: 椰椰的AI助手
+ */
+
+/* 基础容器：所有的水墨画都画在这里面 */
+.ink-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 必须裁切，否则墨水会流出屏幕 */
+    /* 默认背景色，可被覆盖 */
+    background-color: transparent;
+    /* 默认透明度 70% */
+    opacity: 0.7;
+    z-index: 0;
+}
+
+/* 内部画纸：用于承载墨点，方便做跨页偏移 */
+.ink-paper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 核心滤镜应用：通过 JS 动态赋予 id */
+    filter: url(#default-ink-filter);
+    mix-blend-mode: multiply;
+}
+
+/* 墨点基础样式 */
+.ink-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, var(--ink-color), transparent 70%);
+    opacity: 0.85;
+    transform-origin: center;
+    /* 默认开启动画，时长随机由 JS 赋予 */
+    animation: ink-breathe 8s infinite alternate ease-in-out;
+    will-change: transform;
+}
+
+@keyframes ink-breathe {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.08) rotate(5deg); }
+}
+
+/* * 跨页布局支持 
+ * 原理：将画纸宽度设为 200%，左边显示前半段，右边显示后半段
+ */
+.ink-container[data-split="left"] .ink-paper {
+    width: 200%;
+    left: 0;
+}
+
+.ink-container[data-split="right"] .ink-paper {
+    width: 200%;
+    left: -100%; /* 向左偏移父容器宽度的 100% */
+}
+
+/* * 纸张纹理 (可选)
+ * 给容器加一层噪点，增加宣纸质感 
+ */
+.ink-texture-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
