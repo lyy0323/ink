@@ -23,6 +23,8 @@ A browser-based Chinese poetry typesetting tool with procedurally generated ink-
 - **诗集管理 / Collection management** — 多个命名诗集存于 localStorage；新建、重命名、删除、导入导出 `.ink` 文件 / Multiple named poem books in localStorage; create, rename, delete, import/export `.ink` files
 - **诗歌数据库 / Poem database** — 通过 ID 引用 `poems.json` 中的诗歌，无需重复输入 / Reference poems by ID from `poems.json` instead of retyping
 - **打印/PDF / Print/PDF** — `@media print` CSS 输出干净的 A5 页面 / Clean A5 pages via print CSS; `Ctrl+P` to print or save as PDF
+  - 推荐打印设置 / Recommended print settings：目标打印机 → **另存为 PDF** / Destination → **Save as PDF**；纸张尺寸 → **A5**；缩放 → **自定义 150%** / Scale → **Custom 150%**
+  - 成品 PDF 尺寸较大，欢迎提交 PR 提供优化方案 / Output PDFs can be large; PRs to optimize file size are welcome
 - **零构建 / Zero build step** — 纯 HTML/CSS/JS，任意静态服务器或 `file://` 即可运行 / Pure HTML/CSS/JS, runs from any static file server or `file://`
 
 ---
@@ -181,15 +183,12 @@ ink/
 ├── index.html          # 主应用（编辑器 + 阅读器） / Main application
 ├── ink.js              # 水墨渲染引擎 / Ink-wash rendering engine (standalone IIFE)
 ├── ink.css             # 水墨组件样式 / Ink-wash component styles
-├── poems.json          # 诗歌数据库（按 ID 索引） / Poem database (keyed by ID)
+├── poems.json          # 诗歌数据库（仅 sjtuguoxue 分支） / Poem database (sjtuguoxue branch only)
 ├── server.py           # FastAPI 开发服务器 / FastAPI dev server
 ├── tailwind.min.js     # 本地 Tailwind CSS 运行时 / Bundled Tailwind CSS runtime
-├── collections/        # 预设 .ink 文件（首次启动加载） / Preset .ink files
-│   ├── 示例诗集.ink
-│   ├── 晚枫集删存.ink
-│   └── 沐雨集.ink
-├── ink_demo.html       # 组件集成演示 / Component integration demo
-└── ink.html            # 独立水墨生成器 / Standalone ink art generator
+├── 示例诗集.ink         # 语法参考（重置源） / Syntax reference (reset source)
+└── collections/        # 预设 .ink 文件 / Preset .ink files
+    └── 示例诗集.ink
 ```
 
 ---
